@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Одежда</title>
+    <title>Register</title>
     <link rel="stylesheet" href="../../static/css/registration.css">
 </head>
 <body>
@@ -26,35 +26,35 @@
             </div>
         </nav>
     </header>
-    <form class="form">
-        <fieldset class="form-items">
-            <label for="sername">Прізвище:</label>
-            <input id="sername"  type="text">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="name">Ім’я</label>
-            <input id="name"  type="text">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="birthday">Дата нарождення:</label>
-            <input id="birthday"  type="date">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="email">E-mail:</label>
-            <input id="email"  type="email">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="tel">Номер телефону:</label>
-            <input id="tel"  type="tel">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="password">Пароль:</label>
-            <input id="password"  type="password">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="password-verification">Підтвердити:</label>
-            <input id="password-verification"  type="password">
-        </fieldset>
+    <div class="forma">
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username }}<br>
+        </p>
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email }}<br>
+        </p>
+        <p>
+            {{ form.phone_number.label }}<br>
+            {{ form.phone_number }}<br>
+        </p>
+        <p>
+            {{ form.birth_date.label }}<br>
+            {{ form.birth_date }}<br>
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password }}<br>
+        </p>
+        <p>
+            {{ form.confirm_password.label }}<br>
+            {{ form.confirm_password }}<br>
+        </p>
+        <button type="submit">Register</button>
     </form>
+    </div>
 </body>
 </html>

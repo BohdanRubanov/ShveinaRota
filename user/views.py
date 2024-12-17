@@ -1,11 +1,42 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, authenticate
+from .forms import UserRegistrationForm
+from django.contrib import messages
+from django.http import HttpResponse
+
 
 # Create your views here.
 def profile(request):
     return render(request, "user/profile.html")
 
 def registration(request):
-    return render(request, "user/registration.html")
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()  # Зберігаємо користувача та профіль
+            login(request, user)  # Логін користувача після реєстрації
+            return redirect('profile')  # Перенаправляємо на домашню сторінку
+    else:
+        form = UserRegistrationForm()  # Якщо GET запит, виводимо порожню форму
+    return render(request, "user/registration.html", {'form': form})
 
 def authorization(request):
+    if request.method == "POST":
+        # Отримуємо дані з форми
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        # Перевіряємо, чи існує користувач
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            # Якщо користувач знайдений, авторизуємо
+            login(request, user)
+            messages.success(request, "Вітаємо, ви успішно увійшли!")
+            return redirect('profile')  # Перенаправлення після успішного входу
+        else:
+            # Якщо користувач не знайдений
+            messages.error(request, "Невірне ім'я користувача або пароль.")
+            return redirect('authorization')  # Повторний перехід на сторінку логіну
+        
     return render(request, "user/authorization.html")

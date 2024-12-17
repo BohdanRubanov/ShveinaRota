@@ -3,15 +3,17 @@ from django.contrib.auth.models import User
 from .models import UserProfile
 
 class UserRegistrationForm(forms.ModelForm):
-    email = forms.EmailField()
-    phone_number= forms.CharField(max_length=15, label="Номер телефону")
-    birth_date = forms.DateField(widget=forms.SelectDateWidget(years=range(1900, 2025)))
-    password = forms.CharField(widget=forms.PasswordInput)
-    confirm_password = forms.CharField(widget=forms.PasswordInput)
-    
+    username = forms.CharField(label="Логін", max_length=150)
+    email = forms.EmailField(label="Електронна пошта")
+    phone_number = forms.CharField(max_length=15, label="Номер телефону")
+    birth_date = forms.DateField(widget=forms.SelectDateWidget(years=range(1900, 2025)), label="Дата народження")
+    password = forms.CharField(widget=forms.PasswordInput, label="Пароль")
+    confirm_password = forms.CharField(widget=forms.PasswordInput, label="Підтвердження паролю")
+
     class Meta:
         model = User
-        fields = ['username', 'email', 'phone_number', 'birth_date', 'password', 'confirm_password']  # Тепер змістили 'confirm_password' після 'password'
+        fields = ['username', 'email', 'phone_number', 'birth_date', 'password', 'confirm_password']
+
     def clean(self):
         cleaned_data = super().clean()
         password = cleaned_data.get('password')
@@ -23,17 +25,23 @@ class UserRegistrationForm(forms.ModelForm):
         return cleaned_data
 
     def save(self, commit=True):
+        # Прежде чем сохранить, проверяем, что форма валидна
+        if not self.is_valid():
+            raise forms.ValidationError("Форма невалидна. Проверьте данные.")
+
+        # Создаем пользователя, если форма валидна
         user = super().save(commit=False)
-        user.set_password(self.cleaned_data['password'])  # Хешуємо пароль
+        user.set_password(self.cleaned_data['password'])  # Хешируем пароль
 
         if commit:
             user.save()
 
-        # Тепер створюємо профіль користувача
+        # Создаем профиль пользователя
         profile = UserProfile.objects.create(
             user=user,
             email=self.cleaned_data['email'],
             phone_number=self.cleaned_data['phone_number'],
             birth_date=self.cleaned_data['birth_date']
         )
+
         return user
