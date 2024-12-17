@@ -1,0 +1,276 @@
+
+@font-face {
+    font-family: (Jost);
+    src: url('../fonts/Jost-Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: (Jost);
+    src: url('../fonts/Jost-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  
+  /**
+    Нормализация блочной модели
+   */
+   *,
+   ::before,
+   ::after {
+     box-sizing: border-box;
+   }
+   
+   /**
+     Убираем внутренние отступы слева тегам списков,
+     у которых есть атрибут class
+    */
+   :where(ul, ol):where([class]) {
+     padding-left: 0;
+   }
+   
+   /**
+     Убираем внешние отступы body и двум другим тегам,
+     у которых есть атрибут class
+    */
+   body,
+   :where(blockquote, figure):where([class]) {
+     margin: 0;
+   }
+   
+   /**
+     Убираем внешние отступы вертикали нужным тегам,
+     у которых есть атрибут class
+    */
+   :where(
+     h1,
+     h2,
+     h3,
+     h4,
+     h5,
+     h6,
+     p,
+     ul,
+     ol,
+     dl
+   ):where([class]) {
+     margin-block: 0;
+   }
+   
+   :where(dd[class]) {
+     margin-left: 0;
+   }
+   
+   :where(fieldset[class]) {
+     margin-left: 0;
+     padding: 0;
+     border: none;
+   }
+   
+   /**
+     Убираем стандартный маркер маркированному списку,
+     у которого есть атрибут class
+    */
+   :where(ul[class]) {
+     list-style: none;
+   }
+   
+   :where(address[class]) {
+     font-style: normal;
+   }
+   
+   /**
+     Обнуляем вертикальные внешние отступы параграфа,
+     объявляем локальную переменную для внешнего отступа вниз,
+     чтобы избежать взаимодействие с более сложным селектором
+    */
+   p {
+     --paragraphMarginBottom: 24px;
+   
+     margin-block: 0;
+   }
+   
+   /**
+     Внешний отступ вниз для параграфа без атрибута class,
+     который расположен не последним среди своих соседних элементов
+    */
+   p:where(:not([class]):not(:last-child)) {
+     margin-bottom: var(--paragraphMarginBottom);
+   }
+   
+   
+   /**
+     Упрощаем работу с изображениями и видео
+    */
+   img,
+   video {
+     display: block;
+     max-width: 100%;
+     height: auto;
+   }
+   
+   /**
+     Наследуем свойства шрифт для полей ввода
+    */
+   input,
+   textarea,
+   select,
+   button {
+     font: inherit;
+   }
+   
+   html {
+     /**
+       Пригодится в большинстве ситуаций
+       (когда, например, нужно будет "прижать" футер к низу сайта)
+      */
+     height: 100%;
+     /**
+       Убираем скачок интерфейса по горизонтали
+       при появлении / исчезновении скроллбара
+      */
+     /* scrollbar-gutter: stable; */
+   }
+   
+   /**
+     Плавный скролл
+    */
+   html,
+   :has(:target) {
+     scroll-behavior: smooth;
+   }
+   
+   body {
+     /**
+       Пригодится в большинстве ситуаций
+       (когда, например, нужно будет "прижать" футер к низу сайта)
+      */
+     min-height: 100%;
+     /**
+       Унифицированный меж строчный интервал
+      */
+     line-height: 1.5;
+   }
+   
+   /**
+     Нормализация высоты элемента ссылки при его инспектировании в DevTools
+    */
+   a:where([class]) {
+     display: inline-flex;
+   }
+   
+   /**
+     Курсор-рука при наведении на элемент
+    */
+   button,
+   label {
+     cursor: pointer;
+   }
+   
+   
+  :root{
+      --color-dark:#000000;
+      --color-light:#FFFFFF;
+      --color-dark-gray:#291F20;
+      --color-light-gray:#C4C4C4;
+  
+      --border-radius:30px;
+  
+      --font-family-base: 'Jost',sans-serif;
+  
+      --input-height :54px;
+  }
+  
+  body{
+    background-color: var(--color-light-gray);
+    font-family: var(--font-family-base);
+    font-weight:500;
+    font-size: 32px;
+    line-height: 1.22;
+    color: #000000;
+
+    background-image: url('../img/bg-registr-1.png');
+    background-size:cover; /* Покрыть всю область */
+    background-position:center; /* Центрировать изображение */
+    background-repeat: no-repeat;
+      
+  }
+  
+  h1,h2,h3,h4,h5,h6{
+      font-weight: bold;
+  }
+  
+  a{
+      text-decoration: none;
+      color:#000000;
+  }
+  
+
+  .header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 9px;
+
+
+  
+      width: auto;
+      height: 68px;
+      padding: 18px 15px;
+      font-size: 23px;
+      font-weight: 800;
+      background-color: rgb(175, 143, 111, 0.69);
+      text-shadow: 0px 4px rgb(0, 0, 0, 0.25);
+      
+  }
+  
+  .logo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .nav-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    column-gap: 9px;
+  
+  }
+  .menu-right{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: 9px;
+      
+  }
+  .menu-left{
+      display: flex;
+      justify-content:space-around;
+      align-items:flex-end;
+  }
+  
+  
+  .form{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 604px;
+    width: 944px;
+    top: 168px;
+    position: relative;
+    
+  }
+  .form-items{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+.form-items input{
+    height: 39px;
+    width: 395px;
+}
