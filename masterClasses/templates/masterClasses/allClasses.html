@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мастер Класи</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'css/orders.css' %}"> {% endcomment %}
+</head>
+<body>
+    
+  
+        {% for masterClass in masterClasses %}
+            <div>
+                <a href="masterClasses/{{masterClass.id}}">{{ masterClass.title }}</a>
+            </div>
+        {% endfor %}
+        
+</body>
+</html>
