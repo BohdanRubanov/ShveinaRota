@@ -23,7 +23,7 @@ class MasterClass (models.Model):
         verbose_name="Майстер-клас"
         verbose_name_plural ="Майстер-класи"
 class Comments (models.Model):
-    author = models.ForeignKey(User, on_delete= models.CASCADE, verbose_name="Автор", null=True, blank=True)
+    # author = models.ForeignKey(User, on_delete= models.CASCADE, verbose_name="Автор", null=True, blank=True)
     comment= models.TextField(verbose_name="Коментарій")
     date = models.DateTimeField(auto_now_add=True, verbose_name="Час публікації")
     master_class= models.ForeignKey(MasterClass, on_delete=models.CASCADE, related_name="comments")
