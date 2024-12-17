@@ -14,7 +14,7 @@ class MasterClass (models.Model):
     injuredImg3 = models.ImageField(upload_to = 'masterclass_images/', verbose_name="Фото на пораненому 3", null=True, blank=True )
     information= models.TextField(verbose_name="Інформація")
     author = models.ForeignKey(User, on_delete= models.CASCADE, verbose_name="Автор", null=True, blank=True)
-    date = models.DateTimeField(verbose_name="Час публікації")  
+    date = models.DateTimeField(auto_now_add=True, verbose_name="Час публікації") 
 
     def __str__(self):
         return self.title
@@ -25,4 +25,8 @@ class MasterClass (models.Model):
 class Comments (models.Model):
     author = models.ForeignKey(User, on_delete= models.CASCADE, verbose_name="Автор", null=True, blank=True)
     comment= models.TextField(verbose_name="Коментарій")
-    date = models.DateTimeField(verbose_name="Час публікації")
+    date = models.DateTimeField(auto_now_add=True, verbose_name="Час публікації")
+    master_class= models.ForeignKey(MasterClass, on_delete=models.CASCADE, related_name="comments")
+
+    def __str__(self):
+        return f"{self.author} - {self.comment[:50]}"
