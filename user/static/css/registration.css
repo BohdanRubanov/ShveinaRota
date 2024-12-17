@@ -265,7 +265,7 @@
     
     position: relative;
     align-content:space-around;
-    gap: 10px;
+    gap: 5px;
     
   }
   .form-items{
@@ -279,4 +279,7 @@
     background-color:initial;
     gap: 100px;
 
+}
+.button-regist{
+  background-color: rgb(175, 143, 111, 0.69);
 }
