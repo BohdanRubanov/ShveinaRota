@@ -5,6 +5,7 @@
     height: 68px;
     display: flex;
     align-items: center; 
+
     
 }
 
@@ -37,6 +38,7 @@
 
 .inet{
     padding-left: 964px;
+   
 
 }
 
@@ -45,7 +47,9 @@
 }
 
 .telegram{
-    height: 27px;
+
+    height: 25px;
+    width: 25px;
 }
 .youtube{
     height: 25px;
