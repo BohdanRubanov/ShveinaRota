@@ -27,6 +27,9 @@ class Comments (models.Model):
     comment= models.TextField(verbose_name="Коментарій")
     date = models.DateTimeField(auto_now_add=True, verbose_name="Час публікації")
     master_class= models.ForeignKey(MasterClass, on_delete=models.CASCADE, related_name="comments")
+    
+    class Meta:
+        verbose_name="Коментарі"
+        verbose_name_plural ="Коментарі"
 
-    def __str__(self):
-        return f"{self.author} - {self.comment[:50]}"
+    

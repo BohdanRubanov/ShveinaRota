@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ masterClass.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/masterClass.css' %}">
 </head>
 <body>
     <h1>{{ masterClass.title }}</h1>
@@ -51,16 +52,17 @@
 
     </div>
     <div>
-        <h3>Автор:</h3>
+        <h5>Автор:</h5>
 
             <p>{{ masterClass.author.username }}</p>
     </div>
     <div>
-        <h3>Час публікації:</h3>
+        <h5>Час публікації:</h5>
         <p>{{ masterClass.date }}</p>
     </div>
 
     <div>
+        <h3>Написати коментар</h3>
         <form action="" method="POST">
             {% csrf_token %}
             <div>
@@ -72,12 +74,19 @@
     </div>
     <div>
         {% if comments %}
-        {% for comment in comments %}
-            <div>
-                <p>comment.comment</p>
-            </div>
-        {% endfor %}
-        {% endif %}
+        <h3> Коментарі </h3>
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <p>{{ comment.comment }}</p>
+                    <small>Опубліковано: {{ comment.date }}</small>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+
+        <p>Коментарів поки що немає.</p>
+    {% endif %}
     </div>
 
 </body>
