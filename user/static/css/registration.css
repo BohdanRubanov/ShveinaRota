@@ -259,10 +259,13 @@
     display:flex;
     flex-wrap: wrap;
     flex-direction: column;
-    height: 604px;
-    width: 944px;
-    top: 168px;
+    justify-content: center;
+
+    height: 600px;
+    
     position: relative;
+    align-content:space-around;
+    gap: 10px;
     
   }
   .form-items{
@@ -273,4 +276,7 @@
 .form-items input{
     height: 39px;
     width: 395px;
+    background-color:initial;
+    gap: 100px;
+
 }
