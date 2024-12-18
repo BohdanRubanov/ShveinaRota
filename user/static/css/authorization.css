@@ -280,6 +280,10 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   max-width: 400px; /* Ограничиваем ширину формы */
   width: 100%;
+
+}
+.form-login label{
+  font-size: 30px;
 }
 
 .form-login {
@@ -290,14 +294,19 @@
 form p {
 width: 100%; /* Поля остаются на всю ширину */
 margin-bottom: 10px; /* Меньший отступ между полями */
+
 }
 
 form label, form p {
-font-size: 14px; /* Уменьшение размера шрифта для надписей */
+ /* Уменьшение размера шрифта для надписей */
 font-weight: normal; /* Убрать излишнюю жирность */
 color: #333; /* Более нейтральный цвет */
-margin-bottom: 10px; /* Небольшой отступ под надписью */
+margin-bottom: 1px; /* Небольшой отступ под надписью */
 display: block; /* Убедиться, что текст занимает всю ширину */
+}
+
+.form-login button{
+  margin: 15px 0px 15px;
 }
 
 
@@ -305,7 +314,7 @@ form input, form select {
 width: 100%;
 padding: 5px; /* Внутренний отступ */
 margin-bottom: 5px;
-font-size: 12px; /* Размер текста */
+font-size: 25px; /* Размер текста */
 background-color: transparent; /* Прозрачный фон */
 border: 1px solid rgba(255, 255, 255, 0.5); /* Полупрозрачная граница */
 color: #000; /* Цвет текста */
@@ -327,9 +336,8 @@ outline: none;
 /* Placeholder текст */
 form input::placeholder {
 color: rgba(0, 0, 0, 0.5); /* Полупрозрачный цвет для placeholder */
+
 }
-
-
 
 button[type="submit"] {
 width: 100%;
