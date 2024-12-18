@@ -1,5 +1,10 @@
 
-
+*{
+    font-family: "Jost", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal
+  }
 .header{
     position: relative;
     background-color: #AF8F6F;
@@ -29,10 +34,7 @@
     text-shadow: 0px 4px 4px #0000004b;
     padding-left: 52px;
     padding-top: 10px;
-    font-family: "Jost", serif;
-    font-optical-sizing: auto;
     font-weight: 600;
-    font-style: normal;
 }
 
 .znachok{
@@ -74,19 +76,14 @@
 .language{
     padding-left: 5px;
     font-size: 23px;
-    font-family: "Jost", serif;
-    font-optical-sizing: auto;
     font-weight: 600;
-    font-style: normal;
+    
 }
 
 
 .main_text{
     font-size: 128px;
-    font-family: "Jost", serif;
-    font-optical-sizing: auto;
     font-weight: 700;
-    font-style: normal;
     color: #291F20;
     position: relative;
     margin: 0px;
@@ -107,10 +104,7 @@
 .pidtrimka{
     padding-left: 43px;
     color: #FFFFFF;
-    font-family: "Jost", serif;
-    font-optical-sizing: auto;
     font-weight: 500;
-    font-style: normal;
     padding-top: 38px;
     font-size: 30px;
     margin-top: 68px;
@@ -130,10 +124,7 @@
 .donat{
     text-decoration: none;
     color: #FFFFFF;
-    font-family: "Jost", serif;
-    font-optical-sizing: auto;
     font-weight: 900;
-    font-style: normal;
     font-size: 23px;
     padding-left: 40px;
     
@@ -151,21 +142,16 @@
 .about_us{
     text-align: center;
     color: #291f20f0;
-    font-family: "Jost", serif;
-    font-optical-sizing: auto;
     font-weight: 600;
-    font-style: normal;
     font-size: 64px;
     text-shadow: 2px 4px 4px #00000033;
 }
 .numbers{
     display: flex;
-
-
     justify-content: center;
     gap: 150px;
     
-    
+    position: relative;
 }
 .numbers2 p{
     margin: 0;
@@ -174,21 +160,177 @@
 }
 .num{
     font-size: 48px;
-    font-family: "Jost", serif;
-    font-optical-sizing: auto;
     font-weight: 700;
-    font-style: normal;
     color: #291F20;
-
     text-shadow: 6px 4px 4px #00000033;
 
 }
 .opis{
     font-size: 20px;
     color: #000000;
-    font-family: "Jost", serif;
-    font-optical-sizing: auto;
     font-weight: 500;
-    font-style: normal;
    
+}
+.help{
+    display: flex;
+    justify-content: center;
+    gap: 98px;
+    margin-top: 54px;
+    margin-bottom: 20.5px;
+    position: relative;
+}
+
+.help1{
+    margin-left: 64px;
+    margin-right: 64px;
+    height: 431px;
+}
+.buton2{
+    background-image: linear-gradient(to bottom, #072051, #060813);
+    width: 297px;
+    height: 32px;
+    border-radius: 14px;
+    margin-left: 175px;
+    margin-right: 178px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 135.5px;
+}
+.donat2{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 23px;
+    padding-left: 20px;
+    text-align: center;
+}
+.donat3{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 900;
+    font-size: 23px;
+    padding-left: 90px;
+    text-align: center;
+}
+.flow{
+    position: absolute;
+}
+.znacok{
+    position: absolute;
+    float: right;
+    margin-left: 1148px;
+}
+.text{
+    font-size: 36px;
+    font-weight: 500;
+    margin-left: 61px;
+    margin-right: 25px;
+    position: relative;
+}
+
+.photo{
+    width: 90%;
+    margin-left: 70px;
+    position: relative;
+    margin-top: 242px;
+}
+.flow2{
+    position: absolute;
+}
+
+.part{
+    font-weight: 900;
+    font-size: 23px;
+    color: #291F20;
+    margin-left: 96px;
+}
+.partner{
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 13px;
+    color: #291F20;
+    font-weight: 100;
+    margin-right: 462px;
+    
+}
+.partners{
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+.partner1{
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 13px;
+    color: #291F20;
+    font-weight: 100;
+    margin-right: 462px;
+    text-indent: 25px;
+}
+.partner2{
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 13px;
+    color: #291F20;
+    font-weight: 100;
+    margin-right: 462px;
+    text-indent: 50px;
+}
+.partner3{
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 13px;
+    color: #291F20;
+    font-weight: 100;
+    margin-right: 462px;
+    text-indent: 75px;
+}
+
+.mapa{
+    font-size: 64px;
+    color: #291F20;
+    text-shadow: 2px 4px 4px #00000033;
+    font-weight: 600;
+    margin-left: 92px;
+    position: absolute;
+    
+}
+.mapa_img{
+    width: 100%;
+    margin-top: 3px;
+    margin-top: 45px;
+}
+.ikonka{
+    margin-left: 150px;
+    margin-top: 20px;
+}
+.employers{
+    background-color: #bb9e8361;
+    width: 220px;
+    height: 100px;
+    margin-left: 100px;
+    font-weight: 23px;
+}
+.name1{
+    font-size: 16px;
+    font-weight: 900;
+    padding-left: 19px;
+    
+}
+.hno_tu{
+    font-size: 16px;
+    font-weight: 400;
+    margin:0px;
+    padding-left: 24px;
+}
+.employer{
+    display: flex;
+    justify-content: center;
+    margin-right: 100px;
+    position: relative;
 }
