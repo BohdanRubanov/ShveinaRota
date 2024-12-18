@@ -259,7 +259,8 @@
   
   
   .forma {
-    margin-top: 80px;
+    margin-top: 70px;
+    margin-bottom: 20px;
     margin-left: 530px;
     padding: 25px;
     border-radius: 10px;
@@ -268,30 +269,24 @@
     width: 100%;
 }
 
-form {
-    display: flex;
-    flex-direction: column; /* Располагаем элементы вертикально */
+.form-group {
+  display: flex; /* Вмикаємо flexbox */
+  flex-direction: column; /* Елементи розташовуються вертикально */
+  margin-bottom: 12px; /* Відступ між групами */
 }
 
-form p {
-  width: 100%; /* Поля остаются на всю ширину */
-  margin-bottom: 10px; /* Меньший отступ между полями */
+.form-group label {
+  margin-bottom: 5px; /* Відступ між міткою та полем введення */
+  font-size: 14px; /* Розмір шрифту мітки */
+  font-weight: normal; /* Зменшена товщина тексту */
+  color: #333; /* Колір мітки */
 }
 
-form label, form p {
-  font-size: 14px; /* Уменьшение размера шрифта для надписей */
-  font-weight: normal; /* Убрать излишнюю жирность */
-  color: #333; /* Более нейтральный цвет */
-  margin-bottom: 10px; /* Небольшой отступ под надписью */
-  display: block; /* Убедиться, что текст занимает всю ширину */
-}
-
-
-form input, form select {
-  width: 100%;
-  padding: 5px; /* Внутренний отступ */
-  margin-bottom: 5px;
-  font-size: 12px; /* Размер текста */
+.form-group input,
+.form-group select {
+  padding: 4px; /* Менші внутрішні відступи */
+  height: 32px; /* Оптимальна висота полів */
+  font-size: 14px;
   background-color: transparent; /* Прозрачный фон */
   border: 1px solid rgba(255, 255, 255, 0.5); /* Полупрозрачная граница */
   color: #000; /* Цвет текста */
@@ -300,10 +295,16 @@ form input, form select {
   outline: none; /* Убираем внешнюю рамку */
   transition: border-color 0.3s ease; /* Плавный эффект при фокусе */
 }
+.error{
+  margin-top:10Px;
+  font-size: 14px;
+  color: #970909;
+}
+
 
 
 /* Сохраняем прозрачность при фокусе */
-form input:focus, form select:focus {
+.form-group input:focus, .form-group select:focus {
   background-color: transparent; /* Прозрачный фон */
   border-color: #007BFF; /* Синий цвет границы при фокусе */
   color: #000; /* Цвет текста */
@@ -311,9 +312,7 @@ form input:focus, form select:focus {
 }
 
 /* Placeholder текст */
-form input::placeholder {
-  color: rgba(0, 0, 0, 0.5); /* Полупрозрачный цвет для placeholder */
-}
+
 
 
 

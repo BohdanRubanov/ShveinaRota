@@ -29,31 +29,59 @@
     <div class="forma">
     <form method="POST">
         {% csrf_token %}
-        <p>
-            {{ form.username.label }}<br>
-            {{ form.username }}<br>
-        </p>
-        <p>
-            {{ form.email.label }}<br>
-            {{ form.email }}<br>
-        </p>
-        <p>
-            {{ form.phone_number.label }}<br>
-            {{ form.phone_number }}<br>
-        </p>
-        <p>
-            {{ form.birth_date.label }}<br>
-            {{ form.birth_date }}<br>
-        </p>
-        <p>
-            {{ form.password.label }}<br>
-            {{ form.password }}<br>
-        </p>
-        <p>
-            {{ form.confirm_password.label }}<br>
-            {{ form.confirm_password }}<br>
-        </p>
-        <button type="submit">Register</button>
+        <div class="form-group">
+            <label for="id_username">{{ form.username.label }}</label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="error">{{ form.username.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Поле Електронна пошта -->
+        <div class="form-group">
+            <label for="id_email">{{ form.email.label }}</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <div class="error">{{ form.email.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Поле Номер телефону -->
+        <div class="form-group">
+            <label for="id_phone_number">{{ form.phone_number.label }}</label>
+            {{ form.phone_number }}
+            {% if form.phone_number.errors %}
+                <div class="error">{{ form.phone_number.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Поле Дата народження -->
+        <div class="form-group">
+            <label for="id_birth_date">{{ form.birth_date.label }}</label>
+            {{ form.birth_date }}
+            {% if form.birth_date.errors %}
+                <div class="error">{{ form.birth_date.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Поле Пароль -->
+        <div class="form-group">
+            <label for="id_password">{{ form.password.label }}</label>
+            {{ form.password }}
+            {% if form.password.errors %}
+                <div class="error">{{ form.password.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Поле Підтвердження паролю -->
+        <div class="form-group">
+            <label for="id_confirm_password">{{ form.confirm_password.label }}</label>
+            {{ form.confirm_password }}
+            {% if form.confirm_password.errors %}
+                <div class="error">{{ form.confirm_password.errors.0 }}</div>
+            {% endif %}
+        </div>
+        <button type="submit">Зареєструватися</button>
     </form>
     </div>
 </body>

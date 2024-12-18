@@ -14,15 +14,22 @@ class UserRegistrationForm(forms.ModelForm):
         model = User
         fields = ['username', 'email', 'phone_number', 'birth_date', 'password', 'confirm_password']
 
-    def clean(self):
-        cleaned_data = super().clean()
-        password = cleaned_data.get('password')
-        confirm_password = cleaned_data.get('confirm_password')
+    def clean_confirm_password(self):
+        # Отримуємо паролі
+        password = self.cleaned_data.get('password')
+        confirm_password = self.cleaned_data.get('confirm_password')
 
-        if password and confirm_password:
-            if password != confirm_password:
-                raise forms.ValidationError("Паролі не збігаються")
-        return cleaned_data
+        # Перевіряємо, чи вони збігаються
+        if password and confirm_password and password != confirm_password:
+            raise forms.ValidationError("Паролі не збігаються!")  # Помилка для конкретного поля
+
+        return confirm_password
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if User.objects.filter(email=email).exists():
+            raise forms.ValidationError("Ця електронна пошта вже використовується!")
+        return email
 
     def save(self, commit=True):
         # Прежде чем сохранить, проверяем, что форма валидна
@@ -31,6 +38,10 @@ class UserRegistrationForm(forms.ModelForm):
 
         # Создаем пользователя, если форма валидна
         user = super().save(commit=False)
+        
+        if User.objects.filter(email=self.cleaned_data['email']).exists():
+            raise forms.ValidationError("Ця електронна пошта вже використовується!")
+        
         user.set_password(self.cleaned_data['password'])  # Хешируем пароль
 
         if commit:
