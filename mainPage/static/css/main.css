@@ -1,10 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Mochiy+Pop+P+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *{
-    font-family: "Jost", serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal
-  }
+    font-family: "Jost", sans-serif;
+}
 .header{
     position: relative;
     background-color: #AF8F6F;
@@ -205,7 +203,7 @@
     color: #FFFFFF;
     font-weight: 900;
     font-size: 23px;
-    padding-left: 20px;
+    padding-left: 10px;
     text-align: center;
 }
 .donat3{
@@ -242,6 +240,14 @@
     position: absolute;
 }
 
+
+
+.partners{
+    margin-top: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
 .part{
     font-weight: 900;
     font-size: 23px;
@@ -250,25 +256,17 @@
 }
 .partner{
     font-size: 23px;
-    font-weight: 400;
     line-height: 13px;
     color: #291F20;
-    font-weight: 100;
+    font-weight: 400;
     margin-right: 462px;
     
-}
-.partners{
-    margin-top: 50px;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
 }
 .partner1{
     font-size: 23px;
     font-weight: 400;
     line-height: 13px;
     color: #291F20;
-    font-weight: 100;
     margin-right: 462px;
     text-indent: 25px;
 }
@@ -277,7 +275,6 @@
     font-weight: 400;
     line-height: 13px;
     color: #291F20;
-    font-weight: 100;
     margin-right: 462px;
     text-indent: 50px;
 }
@@ -286,7 +283,6 @@
     font-weight: 400;
     line-height: 13px;
     color: #291F20;
-    font-weight: 100;
     margin-right: 462px;
     text-indent: 75px;
 }
@@ -306,8 +302,15 @@
     margin-top: 45px;
 }
 .ikonka{
-    margin-left: 150px;
-    margin-top: 20px;
+    margin-left: 70px;
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+.ikonki{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 30px;
+
 }
 .employers{
     background-color: #bb9e8361;
@@ -315,14 +318,22 @@
     height: 100px;
     margin-left: 100px;
     font-weight: 23px;
+    margin-left: 130px;
+
 }
 .name1{
     font-size: 16px;
     font-weight: 900;
     padding-left: 19px;
-    
+    line-height: 1px;
 }
-.hno_tu{
+.name2{
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 19px;
+    line-height: 1px;
+}
+.hto_tu{
     font-size: 16px;
     font-weight: 400;
     margin:0px;
@@ -333,4 +344,109 @@
     justify-content: center;
     margin-right: 100px;
     position: relative;
+    padding-right: 50px;
+   
+    margin-right: 11px;
+}
+.header2{
+    background-color: #92a2cea0;
+    position: relative;
+    width: 100%;
+    margin-top: 70px;
+    height: 184px;
+    display: flex;
+    justify-content: left;
+}
+.znak2{
+    padding-left: 43px;
+    padding-top: 50px;
+}
+.header_text{
+    font-size: 23px;
+    font-weight: 600;
+    color: #2E2B2B;
+    text-shadow: 0px 4px 4px #00000055;
+    padding-top: 70px;
+    padding-left: 65px;
+}
+.twiter1{
+    height: 25px;
+    padding-top: 80px;
+    padding-left: 150px;
+}
+
+.telegram1{
+    padding-top: 80px;
+    padding-left: 150px;
+    height: 25px;
+    width: 25px;
+}
+.youtube1{
+    height: 25px;
+    padding-top: 80px;
+    padding-left: 150px;
+}
+.facebook0{
+    height: 25px;
+    padding-top: 80px;
+    padding-left: 150px;
+}
+.inst0{
+    height: 25px;
+    padding-top: 80px;
+    padding-left: 150px;
+}
+.twit1{
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000000;
+
+    padding-left: 500px;
+}
+.tube1{
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000000;
+
+    padding-left: 50px;
+}
+.tg1{
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000000;
+
+    padding-left: 50px;
+}
+.facebook1{
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000000;
+ 
+    padding-left: 50px;
+}
+.inst1{
+    font-size: 24px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000000;
+
+    padding-left: 50px;
+}
+.header_link{
+    position: absolute;
+    margin-top: 70px;
+    display: flex;
+    justify-content: left;
+}
+.header3{
+    position: relative;
+    width: 100%;
+    margin-top: 0px;
+
+    display: flex;
+    justify-content: left;
 }
