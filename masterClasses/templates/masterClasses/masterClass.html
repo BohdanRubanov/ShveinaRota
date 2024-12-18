@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ masterClass.title }}</title>
+</head>
+<body>
+
+    <h1>{{ masterClass.title }}</h1>
+
+    <div>
+        <h3>Інформація:</h3>
+        <p>{{ masterClass.information }}</p>
+    </div>
+
+    <div>
+        <h3>Фото-інструкція:</h3>
+
+            <img src="{{ masterClass.instructionImg1.url }}" alt="Фото-інструкція1">
+
+
+  
+            <img src="{{ masterClass.instructionImg2.url }}" alt="Фото-інструкція2">
+
+    </div>
+
+    <div>
+        <h3>Посилання на відео:</h3>
+
+            <a href="{{ masterClass.video }}.replace('youtu.be', 'www.youtube.com/embed').split('?')[0]" target="_blank">Переглянути відео</a>
+
+    </div>
+
+    <div>
+        <h3>Фото-приклади:</h3>
+ 
+            <img src="{{ masterClass.examplesImg1.url }}" alt="Фото-приклад1">
+
+            <img src="{{ masterClass.examplesImg2.url }}" alt="Фото-приклад2">
+
+
+            <img src="{{ masterClass.examplesImg3.url }}" alt="Фото-приклад3">
+
+    </div>
+
+    <div>
+        <h3>Фото на пораненому:</h3>
+
+            <img src="{{ masterClass.injuredImg1.url }}" alt="Фото на пораненому 1">
+
+
+            <img src="{{ masterClass.injuredImg2.url }}" alt="Фото на пораненому 2">
+
+  
+            <img src="{{ masterClass.injuredImg3.url }}" alt="Фото на пораненому 3">
+
+    </div>
+
+    <div>
+        <h3>Автор:</h3>
+
+            <p>{{ masterClass.author.username }}</p>
+
+
+
+    </div>
+
+    <div>
+        <h3>Час публікації:</h3>
+        <p>{{ masterClass.date }}</p>
+    </div>
+
+</body>
+</html>
