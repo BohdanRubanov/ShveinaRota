@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../../static/css/authorization.css">
+</head>
+<body>
+    <header class="header">
+        <a class="header-logo" href="/">
+            Швейна рота
+            <img class="logo" src="../../static/img/logo-preview 2.png" alt="logo" height="33px" width="33px">
+
+        </a>
+        <nav class="nav-header">         
+            <div class="menu-right">
+                <a href="/youtub/"><img src="../../static/img/png-youtube-preview 1.png" alt="youtub"></a>
+                <a href="/telega/"><img src="../../static/img/png-telegram-preview 1.png" alt="telega"></a>
+                <a href="/facebook/"><img src="../../static/img/png-feacbook.png" alt="facebook"></a>
+                <a href="/instagram/"><img src="../../static/img/png-instagram-preview 1.png" alt="instagram"></a>
+            </div>
+            <div class="menu-left"></div>
+                <a href="/profile/" class="profile">Профіль</a>
+                <a href="/language/" class="language"><span class="arrow"></span> EN</a>
+            </div>
+        </nav>
+    </header>
+    
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <form class="form-login" method="POST">
+        <legend> <h2>Авторизація</h2></legend>
+        {% csrf_token %}
+        <p>
+            <label for="username">Логін:</label><br>
+            <input type="text" id="username" name="username" required>
+        </p>
+        <p>
+            <label for="password">Пароль:</label><br>
+            <input type="password" id="password" name="password" required>
+        </p>
+        <button type="submit">Увійти</button>
+        <p>Не маєте акаунту? <a href="{% url 'registration' %}">Зареєструйтесь</a></p> <!-- Посилання на реєстрацію -->
+    </form>
+    
+    
+</body>
+</html>
