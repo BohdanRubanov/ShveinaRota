@@ -32,10 +32,4 @@ class Comments (models.Model):
         verbose_name="Коментарі"
         verbose_name_plural ="Коментарі"
 
-<<<<<<< HEAD
     
-=======
-    def __str__(self):
-        return f"{self.author} - {self.comment[:50]}"
-
->>>>>>> bf638fa2ba0c71065830537bf3a96395f4bbfc5d

@@ -3,13 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Профіль</title>
+    <link rel="stylesheet" href="../../static/css/profile.css">
 </head>
 <body>
-    <h1>Hello</h1>
-    
+    <h1>Профіль</h1>
+    {% if user.is_authenticated %}
+        <p>Логін: {{ user.username }}</p>
+        <p>Електронна пошта: {{ user.email }}</p>
+        <p>Номер телефону: {{ user.userprofile.phone_number }}</p>
+        <p>Дата народження: {{ user.userprofile.birth_date }}</p>
+        <a href="{% url 'logout' %}"><button type="submit">Вихід</button></a>
         
+    {% else %}
+    <a href="{% url 'authorization' %}"><button type="submit">Авторизація</button></a>
+    <a href="{% url 'registration' %}"><button type="submit">Реєстрація</button></a>
+    {% endif %}  
         
         
  

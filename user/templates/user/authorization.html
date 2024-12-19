@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Авторизація</title>
+    <link rel="stylesheet" href="../../static/css/authorization.css">
 </head>
 <body>
-    <h2>Login</h2>
+    <h2>Авторизація</h2>
     
     {% if messages %}
         <ul>
@@ -19,14 +20,14 @@
     <form method="POST">
         {% csrf_token %}
         <p>
-            <label for="username">Username:</label>
+            <label for="username">Логін:</label>
             <input type="text" id="username" name="username" required>
         </p>
         <p>
-            <label for="password">Password:</label>
+            <label for="password">Пароль:</label>
             <input type="password" id="password" name="password" required>
         </p>
-        <button type="submit">Login</button>
+        <button type="submit">Авторизуватися</button>
     </form>
     
     <p>Не маєте акаунту? <a href="{% url 'registration' %}">Зареєструйтесь</a></p> <!-- Посилання на реєстрацію -->
