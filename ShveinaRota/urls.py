@@ -24,9 +24,9 @@ from masterClasses.views import masterClasses, masterClass
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', main_page),
-    path('profile', profile),
-    path('profile/registration', registration),
-    path('profile/authorization', authorization),
+    path('profile', profile, name="profile"),
+    path('profile/registration', registration, name="registration"),
+    path('profile/authorization', authorization, name="authorization"),
     path('masterClasses', masterClasses),
     path('masterClasses/<int:id>/', masterClass),
 ]

@@ -228,10 +228,13 @@
       
   }
   
-  .logo{
+  .header-logo{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+  }
+  .header-logo img{
+    margin-top: 10px;
   }
   
   .nav-header{
@@ -255,22 +258,77 @@
   }
   
   
-  .form{
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 604px;
-    width: 944px;
-    top: 168px;
-    position: relative;
-    
-  }
-  .form-items{
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-  }
-.form-items input{
-    height: 39px;
-    width: 395px;
+  .forma {
+    margin-top: 70px;
+    margin-bottom: 20px;
+    margin-left: 530px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 400px; /* Ограничиваем ширину формы */
+    width: 100%;
+}
+
+.form-group {
+  display: flex; /* Вмикаємо flexbox */
+  flex-direction: column; /* Елементи розташовуються вертикально */
+  margin-bottom: 12px; /* Відступ між групами */
+}
+
+.form-group label {
+  margin-bottom: 5px; /* Відступ між міткою та полем введення */
+  font-size: 14px; /* Розмір шрифту мітки */
+  font-weight: normal; /* Зменшена товщина тексту */
+  color: #333; /* Колір мітки */
+}
+
+.form-group input,
+.form-group select {
+  padding: 4px; /* Менші внутрішні відступи */
+  height: 32px; /* Оптимальна висота полів */
+  font-size: 14px;
+  background-color: transparent; /* Прозрачный фон */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Полупрозрачная граница */
+  color: #000; /* Цвет текста */
+  border-radius: 5px; /* Скруглённые углы */
+  box-sizing: border-box;
+  outline: none; /* Убираем внешнюю рамку */
+  transition: border-color 0.3s ease; /* Плавный эффект при фокусе */
+}
+.error{
+  margin-top:10Px;
+  font-size: 14px;
+  color: #970909;
+}
+
+
+
+/* Сохраняем прозрачность при фокусе */
+.form-group input:focus, .form-group select:focus {
+  background-color: transparent; /* Прозрачный фон */
+  border-color: #007BFF; /* Синий цвет границы при фокусе */
+  color: #000; /* Цвет текста */
+  outline: none;
+}
+
+/* Placeholder текст */
+
+
+
+
+button[type="submit"] {
+  width: 100%;
+  padding: 8px; /* Меньший отступ кнопки */
+  font-size: 14px; /* Меньший размер шрифта */
+  border-radius: 15px; /* Скруглённые края */
+  background-color: #6e7174;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #6e7174;
+  transform: scale(1.05);
 }

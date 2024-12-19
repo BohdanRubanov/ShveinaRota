@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Одежда</title>
+    <title>Register</title>
     <link rel="stylesheet" href="../../static/css/registration.css">
 </head>
 <body>
@@ -26,35 +26,63 @@
             </div>
         </nav>
     </header>
-    <form class="form">
-        <fieldset class="form-items">
-            <label for="sername">Прізвище:</label>
-            <input id="sername"  type="text">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="name">Ім’я</label>
-            <input id="name"  type="text">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="birthday">Дата нарождення:</label>
-            <input id="birthday"  type="date">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="email">E-mail:</label>
-            <input id="email"  type="email">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="tel">Номер телефону:</label>
-            <input id="tel"  type="tel">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="password">Пароль:</label>
-            <input id="password"  type="password">
-        </fieldset>
-        <fieldset class="form-items">
-            <label for="password-verification">Підтвердити:</label>
-            <input id="password-verification"  type="password">
-        </fieldset>
+    <div class="forma">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_username">{{ form.username.label }}</label>
+            {{ form.username }}
+            {% if form.username.errors %}
+                <div class="error">{{ form.username.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Поле Електронна пошта -->
+        <div class="form-group">
+            <label for="id_email">{{ form.email.label }}</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <div class="error">{{ form.email.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Поле Номер телефону -->
+        <div class="form-group">
+            <label for="id_phone_number">{{ form.phone_number.label }}</label>
+            {{ form.phone_number }}
+            {% if form.phone_number.errors %}
+                <div class="error">{{ form.phone_number.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Поле Дата народження -->
+        <div class="form-group">
+            <label for="id_birth_date">{{ form.birth_date.label }}</label>
+            {{ form.birth_date }}
+            {% if form.birth_date.errors %}
+                <div class="error">{{ form.birth_date.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Поле Пароль -->
+        <div class="form-group">
+            <label for="id_password">{{ form.password.label }}</label>
+            {{ form.password }}
+            {% if form.password.errors %}
+                <div class="error">{{ form.password.errors.0 }}</div>
+            {% endif %}
+        </div>
+
+        <!-- Поле Підтвердження паролю -->
+        <div class="form-group">
+            <label for="id_confirm_password">{{ form.confirm_password.label }}</label>
+            {{ form.confirm_password }}
+            {% if form.confirm_password.errors %}
+                <div class="error">{{ form.confirm_password.errors.0 }}</div>
+            {% endif %}
+        </div>
+        <button type="submit">Зареєструватися</button>
     </form>
+    </div>
 </body>
 </html>
