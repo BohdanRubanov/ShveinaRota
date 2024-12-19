@@ -1,0 +1,16 @@
+button[type="submit"] {
+    width: 150px;
+    padding: 8px; /* Меньший отступ кнопки */
+    font-size: 14px; /* Меньший размер шрифта */
+    border-radius: 15px; /* Скруглённые края */
+    background-color: #6e7174;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #6e7174;
+    transform: scale(1.05);
+  }

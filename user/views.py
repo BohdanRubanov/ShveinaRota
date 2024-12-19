@@ -1,14 +1,20 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from .forms import UserRegistrationForm
 from django.contrib import messages
 from django.http import HttpResponse
 
 
 # Create your views here.
-def profile(request):
-    return render(request, "user/profile.html")
+def logout_view(request):
+    logout(request)  # Вихід користувача
+    return redirect('profile') 
 
+def profile(request):
+    if request.user.is_authenticated:
+        return render(request, "user/profile.html", {'user': request.user})
+    else:
+       return render(request, "user/profile.html")
 def registration(request):
     if request.method == 'POST':
         form = UserRegistrationForm(request.POST)

@@ -18,10 +18,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 from mainPage.views import main_page
-from user.views import profile, registration, authorization
+from user.views import profile, registration, authorization, logout_view
 from masterClasses.views import masterClasses, masterClass
 
 urlpatterns = [
+    path('profile/logout',logout_view, name='logout'),
     path('admin/', admin.site.urls),
     path('', main_page),
     path('profile', profile, name="profile"),
